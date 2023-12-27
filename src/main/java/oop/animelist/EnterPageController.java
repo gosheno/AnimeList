@@ -24,7 +24,7 @@ public class EnterPageController {
     void initialize() {
         back_button.setOnAction(actionEvent -> {
             back_button.getScene().getWindow().hide();
-
+            HelloController.OpenNewScene(back_button, "Hello-view.fxml");
         });
 
     }

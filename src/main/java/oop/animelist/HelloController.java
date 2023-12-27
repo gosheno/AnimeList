@@ -32,20 +32,23 @@ public class HelloController {
     @FXML
     void initialize() {
         enter_button.setOnAction(actionEvent -> {
-            enter_button.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("EnterPage.fxml"));
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-
+            OpenNewScene(enter_button, "EnterPage.fxml");
         });
+    };
 
+    static public void OpenNewScene(Button button, String window){
+        button.getScene().getWindow().hide();
+
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource(window));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
+
 }
