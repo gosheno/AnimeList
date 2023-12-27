@@ -1,8 +1,5 @@
 package oop.animelist;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class HelloController {
 
@@ -36,12 +37,14 @@ public class HelloController {
     void initialize() {
         enter_button.setOnAction(actionEvent -> {OpenNewScene(enter_button, "EnterPage.fxml");
         });
-
-        reg_button.setOnAction(actionEvent -> {OpenNewScene(reg_button, "Reg_Page.fxml");
-        });
     };
 
+    @FXML
+    void registeropen() {
+        reg_button.setOnAction(actionEvent -> {OpenNewScene(reg_button, "Reg_Page.fxml");
+        });
 
+    };
     static public void OpenNewScene(Button button, String window){
         button.getScene().getWindow().hide();
 
