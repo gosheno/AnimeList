@@ -4,23 +4,13 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="hibernate.dialect">
-      org.hibernate.dialect.MySQLDialect
-    </property>
-    <property name="hibernate.connection.driver_class">
-      com.mysql.jdbc.Driver
-    </property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 
     <!-- Assume PROSELYTE_TUTORIAL is the database name -->
-    <property name="hibernate.connection.url">
-      jdbc:mysql://localhost/anime_store
-    </property>
-    <property name="hibernate.connection.username">
-      root
-    </property>
-    <property name="hibernate.connection.password">
-      13245
-    </property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost/anime_store</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">master5S</property>
 
   </session-factory>
 </hibernate-configuration>
