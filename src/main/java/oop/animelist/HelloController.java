@@ -30,12 +30,20 @@ public class HelloController {
     private PasswordField password_field;
 
     @FXML
+    private Button reg_button;
+
+    @FXML
     void initialize() {
-        enter_button.setOnAction(actionEvent -> {
-            OpenNewScene(enter_button, "EnterPage.fxml");
+        enter_button.setOnAction(actionEvent -> {OpenNewScene(enter_button, "EnterPage.fxml");
         });
     };
 
+    @FXML
+    void registeropen() {
+        reg_button.setOnAction(actionEvent -> {OpenNewScene(reg_button, "Reg_Page.fxml");
+        });
+
+    };
     static public void OpenNewScene(Button button, String window){
         button.getScene().getWindow().hide();
 
