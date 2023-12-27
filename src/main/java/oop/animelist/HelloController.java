@@ -44,6 +44,7 @@ public class HelloController {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.showAndWait();
+
         });
 
     }
