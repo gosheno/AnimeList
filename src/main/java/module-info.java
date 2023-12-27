@@ -8,5 +8,6 @@ module oop.animelist {
     requires jakarta.persistence;
 
     opens oop.animelist to javafx.fxml;
+    opens logic.models to org.hibernate.orm.core;
     exports oop.animelist;
 }

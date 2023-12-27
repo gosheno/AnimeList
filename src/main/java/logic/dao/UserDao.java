@@ -2,6 +2,7 @@ package logic.dao;
 
 import logic.models.Anime;
 import logic.models.User;
+import logic.models.UserEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import logic.utils.HibernateSessionFactoryUtil;

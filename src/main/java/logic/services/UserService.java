@@ -3,6 +3,7 @@ package logic.services;
 import logic.dao.UserDao;
 import logic.models.Anime;
 import logic.models.User;
+import logic.models.UserEntity;
 
 import java.util.List;
 

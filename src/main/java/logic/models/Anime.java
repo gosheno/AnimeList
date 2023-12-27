@@ -5,8 +5,9 @@ import jakarta.persistence.*;
 @Table(name = "anime")
 public class Anime {
 
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private int id;
 
     private String name;
