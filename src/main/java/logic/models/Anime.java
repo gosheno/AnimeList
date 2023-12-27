@@ -1,6 +1,6 @@
 package logic.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 @Entity
 @Table(name = "anime")
 public class Anime {

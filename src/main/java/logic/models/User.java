@@ -1,8 +1,7 @@
 package logic.models;
 
-import org.hibernate.annotations.CascadeType;
-import org.hibernate.annotations.Table;
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
