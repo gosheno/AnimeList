@@ -28,10 +28,10 @@ public class EnterPageController {
 
 
     @FXML
-    private Button ButtonAdd;
+    private Button add_Button;
 
     @FXML
-    private Button ButtonDel;
+    private Button del_Button;
 
     @FXML
     private TextField Textfield;
@@ -50,6 +50,7 @@ public class EnterPageController {
     void initialize() {
         VboxPublicSet();
         VboxUserSet();
+
         back_button.setOnAction(actionEvent -> {
             MainPageController.OpenNewScene(back_button, "MainPage.fxml");
         });

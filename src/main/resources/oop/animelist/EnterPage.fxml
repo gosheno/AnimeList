@@ -30,8 +30,8 @@
                         </ScrollPane>
                         <ButtonBar layoutX="132.0" layoutY="355.0" prefHeight="40.0" prefWidth="200.0">
                           <buttons>
-                              <Button fx:id="ButtonDel" mnemonicParsing="false" style="-fx-background-color: 1fffda;" text="удалить" />
-                            <Button fx:id="ButtonAdd" mnemonicParsing="false" text="добавить" />
+                              <Button fx:id="del_Button" mnemonicParsing="false" style="-fx-background-color: 1fffda;" text="удалить" />
+                            <Button fx:id="add_Button" mnemonicParsing="false" text="добавить" />
                           </buttons>
                         </ButtonBar>
                         <TextField fx:id="Textfield" layoutY="362.0" promptText="название аниме" style="-fx-background-color: 1fffda; -fx-border-color: 0; -fx-font-style: 1fffda;" />
