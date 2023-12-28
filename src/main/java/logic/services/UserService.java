@@ -33,7 +33,7 @@ public class UserService {
         return usersDao.findAll();
     }
 
-    public Anime findAutoById(int id) {
+    public Anime findAnimeById(int id) {
         return usersDao.findAnimeById(id);
     }
 

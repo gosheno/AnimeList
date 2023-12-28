@@ -38,27 +38,28 @@ public class UserDao {
         session.close();
     }
     public void remove_all() {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-
         for (User item: findAll()){
-            session.remove(item);
+            remove(item);
         }
-        tx1.commit();
-        session.close();
     }
 
 
     public Anime findAnimeById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Anime.class, id);
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        return session.get(Anime.class, id);
     }
 
     public List<User> findAll() {
-        List<User> users = (List<User>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From User").list();
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        List<User> users = (List<User>)  session.createQuery("From User").list();
+        session.close();
         return users;
     }
     public User get_user(String name, String password) {
-        List<User> users = (List<User>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From User").list();
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        List<User> users = (List<User>)  session.createQuery("From User").list();
+        session.close();
+
         for(User item:users){
             if (item.getName().equals(name) && item.getPassword().equals(password)){
                 return item;

@@ -38,6 +38,7 @@ public class MainPageController {
     void initialize() {
 
         enter_button.setOnAction(actionEvent -> {
+
             String login = login_field.getText().trim();
             String password = password_field.getText().trim();
             if(!login.equals("") && !password.equals("")){
