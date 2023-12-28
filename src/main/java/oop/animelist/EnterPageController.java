@@ -60,7 +60,10 @@ public class EnterPageController {
             AnimeService animeService = new AnimeService();
             String name = Textfield.getText().trim();
             Anime anime = animeService.getAnime(name, MainPageController.currentUser);
-            animeService.deleteAnime(anime);
+            if (anime!= null){
+                animeService.deleteAnime(anime);
+            }
+
         });
     }
 
