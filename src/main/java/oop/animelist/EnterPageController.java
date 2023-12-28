@@ -62,12 +62,12 @@ public class EnterPageController {
             Anime anime = animeService.getAnime(name, MainPageController.currentUser);
             if (anime!= null){
                 animeService.deleteAnime(anime);
-                VboxPublic.getChildren().removeAll();
-                VboxUserSet();
+                MainPageController.OpenNewScene(del_Button, "EnterPage.fxml");
             }
 
 
         });
+
 
         add_Button.setOnAction(actionEvent -> {
             AnimeService animeService = new AnimeService();

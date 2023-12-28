@@ -11,6 +11,7 @@ public class UserService {
 
     public UserService() {
     }
+    public int  regcheck(String login){ return usersDao.is_regged(login);}
 
     public User findUser(int id) {
         return usersDao.findById(id);

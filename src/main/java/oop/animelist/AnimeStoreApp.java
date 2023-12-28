@@ -25,7 +25,7 @@ public class AnimeStoreApp extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-        test();
+        //test();
         launch();
     }
     public static void test() {

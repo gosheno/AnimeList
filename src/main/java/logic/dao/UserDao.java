@@ -61,6 +61,20 @@ public class UserDao {
         session.close();
         return user;
     }
+    public int is_regged(String newlogin){
+
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Query query = session.createQuery("from User where name = :new");
+        query.setParameter("new", newlogin);
+        if(query.uniqueResult() != null ){
+            session.close();
+            return 1;
+
+        }
+        session.close();
+        return 0;
+
+    }
 
 
 }
