@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class MainPageController {
 
-    static User currentUser;
+    public static User currentUser;
 
     @FXML
     private ResourceBundle resources;

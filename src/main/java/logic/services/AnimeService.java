@@ -34,8 +34,8 @@ public class AnimeService {
 
     public Anime findAnimeById(int id) {return animeDao.findById(id);}
 
-    public Anime getAnime(String name) {
-        return animeDao.getAnime(name);
+    public Anime getAnime(String name, User user) {
+        return animeDao.getAnime(name, user);
     };
     public void remove_all(){animeDao.remove_all();};
 

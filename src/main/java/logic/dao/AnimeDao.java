@@ -3,6 +3,7 @@ package logic.dao;
 import logic.models.Anime;
 import logic.models.User;
 import logic.utils.HibernateSessionFactoryUtil;
+import oop.animelist.MainPageController;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -54,14 +55,13 @@ public class AnimeDao {
         session.close();
         return items;
     }
-    public Anime getAnime(String name) {
+    public Anime getAnime(String name, User user) {
 
-        for(Anime item:findAll()){
-            if (item.getName().equals(name) ){
-                return item;
-            }
-        }
-        return null;
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Query query = session.createQuery("from Anime where user.id = :paramId and name = :paramName" );
+        query.setParameter("paramId", MainPageController.currentUser);
+        query.setParameter("paramName", name);
+        return (Anime)query.uniqueResult();
     }
 
 
@@ -87,4 +87,5 @@ public class AnimeDao {
         }
         return animeNames;
     }
+
 }

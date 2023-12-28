@@ -55,6 +55,11 @@ public class EnterPageController {
             MainPageController.OpenNewScene(back_button, "MainPage.fxml");
         });
 
+        del_Button.setOnAction(actionEvent -> {
+            AnimeService animeService = new AnimeService();
+            String name = Textfield.getText().trim();
+
+        });
     }
 
     public void VboxPublicSet() {
