@@ -6,6 +6,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import logic.models.User;
 import logic.services.AnimeService;
 
 import java.net.URL;
@@ -56,6 +57,17 @@ public class EnterPageController {
         for (String str : data) {
 
             VboxPublic.getChildren().add(new Text(str));
+
         }
+    }
+
+    public void VboxUserSet(User currentuser){
+        AnimeService animeService = new AnimeService();
+        List<String> data = animeService.getAnimeListUser(currentuser);
+        for (String str : data )
+        {
+            VboxUser.getChildren().add(new Text(str));
+        }
+
     }
 }
