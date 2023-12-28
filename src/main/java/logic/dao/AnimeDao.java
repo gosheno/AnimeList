@@ -76,16 +76,13 @@ public class AnimeDao {
 
     public List<String> getAnimeNamesUser(User user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Query query = session.createQuery("from Anime where user= :paramUser ");
-
-        query.setParameter("paramUser", user);
-
-        List<Anime> animeList = (List<Anime>)query.list();
+        Query query = session.createQuery("from Anime where user.id = :paramid");
+        query.setParameter("paramid", user.getId());
+        List<Anime> animeList = query.list();
         session.close();
-
         List<String> animeNames = new ArrayList<>();
         for (Anime anime : animeList) {
-
+            System.out.println(anime.getName());
             animeNames.add(anime.getName());
         }
         return animeNames;

@@ -6,9 +6,8 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import logic.models.User;
 import logic.services.AnimeService;
-import oop.animelist.MainPageController;
+
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -45,7 +44,7 @@ public class EnterPageController {
     @FXML
     void initialize() {
         VboxPublicSet();
-        VboxUserSet(MainPageController.currentUser);
+        VboxUserSet();
         back_button.setOnAction(actionEvent -> {
             MainPageController.OpenNewScene(back_button, "MainPage.fxml");
         });
@@ -62,9 +61,9 @@ public class EnterPageController {
         }
     }
 
-    public void VboxUserSet(User currentuser){
+    public void VboxUserSet(){
         AnimeService animeService = new AnimeService();
-        List<String> data = animeService.getAnimeListUser(currentuser);
+        List<String> data = animeService.getAnimeListUser(MainPageController.currentUser);
         for (String str : data )
         {
             VboxUser.getChildren().add(new Text(str));

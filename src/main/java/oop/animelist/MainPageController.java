@@ -53,8 +53,8 @@ public class MainPageController {
     private void login_user(String login, String password) {
         UserService userService = new UserService();
         if(userService.getUser(login, password)!=null){
+            currentUser = userService.getUser(login, password);
             OpenNewScene(enter_button, "EnterPage.fxml");
-            currentUser =userService.getUser(login, password);
         };
     }
 
