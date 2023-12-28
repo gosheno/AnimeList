@@ -62,7 +62,10 @@ public class EnterPageController {
             Anime anime = animeService.getAnime(name, MainPageController.currentUser);
             if (anime!= null){
                 animeService.deleteAnime(anime);
+                VboxPublic.getChildren().removeAll();
+                VboxUserSet();
             }
+
 
         });
     }
