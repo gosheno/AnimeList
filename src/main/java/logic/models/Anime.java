@@ -5,9 +5,8 @@ import jakarta.persistence.*;
 @Table(name = "anime")
 public class Anime {
 
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
@@ -45,8 +44,7 @@ public class Anime {
         this.user = user;
     }
 
-    @Override
-    public String toString() {
+    @Override    public String toString() {
         return name + " ";
     }
 }

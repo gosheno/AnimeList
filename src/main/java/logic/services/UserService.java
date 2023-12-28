@@ -3,7 +3,6 @@ package logic.services;
 import logic.dao.UserDao;
 import logic.models.Anime;
 import logic.models.User;
-import logic.models.UserEntity;
 
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class UserService {
     }
 
     public void deleteUser(User user) {
-        usersDao.delete(user);
+        usersDao.remove(user);
     }
 
     public void updateUser(User user) {
@@ -37,6 +36,10 @@ public class UserService {
     public Anime findAutoById(int id) {
         return usersDao.findAnimeById(id);
     }
+
+    public User getUser(String name, String password) {
+        return usersDao.get_user(name, password);
+    };
 
 
 }

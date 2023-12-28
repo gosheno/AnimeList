@@ -16,7 +16,7 @@ public class AnimeEntity {
     private String name;
     @Basic
     @Column(name = "user_id")
-    private Integer userId;
+    private Integer user_id;
 
     public int getId() {
         return id;
@@ -34,12 +34,12 @@ public class AnimeEntity {
         this.name = name;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUser_id(Integer userId) {
+        this.user_id = userId;
     }
 
     @Override
@@ -47,11 +47,11 @@ public class AnimeEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AnimeEntity that = (AnimeEntity) o;
-        return id == that.id && Objects.equals(name, that.name) && Objects.equals(userId, that.userId);
+        return id == that.id && Objects.equals(name, that.name) && Objects.equals(user_id, that.user_id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, userId);
+        return Objects.hash(id, name, user_id);
     }
 }

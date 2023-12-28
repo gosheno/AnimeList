@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import logic.services.UserService;
 
 import java.io.IOException;
 import java.net.URL;
@@ -35,16 +36,31 @@ public class HelloController {
 
     @FXML
     void initialize() {
-        enter_button.setOnAction(actionEvent -> {OpenNewScene(enter_button, "EnterPage.fxml");
-        });
-    };
 
-    @FXML
-    void registeropen() {
-        reg_button.setOnAction(actionEvent -> {OpenNewScene(reg_button, "Reg_Page.fxml");
-        });
+        enter_button.setOnAction(actionEvent -> {
+            String login = login_field.getText().trim();
+            String password = password_field.getText().trim();
+            if(!login.equals("") && !password.equals("")){
+                login_user(login, password);
 
-    };
+            }
+
+
+        });
+        reg_button.setOnAction(actionEvent -> {OpenNewScene(reg_button, "Reg_Page.fxml");});
+    }
+
+    private void login_user(String login, String password) {
+        UserService userService = new UserService();
+        if(userService.getUser(login, password)!=null){
+            OpenNewScene(enter_button, "EnterPage.fxml");
+        };
+
+
+    }
+
+    ;
+
     static public void OpenNewScene(Button button, String window){
         button.getScene().getWindow().hide();
 

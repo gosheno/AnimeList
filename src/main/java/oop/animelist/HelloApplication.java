@@ -4,9 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import logic.models.Anime;
-import logic.models.User;
-import logic.services.UserService;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -22,22 +19,8 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-        Test();
-
         launch();
     }
 
-    public static void Test()throws SQLException {
-        UserService userService = new UserService();
-        User user = new User("Masha","hello");
-        userService.saveUser(user);
-        Anime AOT = new Anime("Attack On Tytan");
-        AOT.setUser(user);
-        user.addAnime(AOT);
-        Anime TG = new Anime("Tokyo Ghoul");
-        TG.setUser(user);
-        user.addAnime(TG);
-        userService.updateUser(user);
-    }
 
 }
