@@ -58,10 +58,12 @@ public class AnimeDao {
 
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Query query = session.createQuery("from Anime where user.id = :paramId and name = :paramName" );
-        session.close();
+
         query.setParameter("paramId", user.getId());
         query.setParameter("paramName", name);
-        return (Anime)query.uniqueResult();
+        Anime anime  = (Anime)query.uniqueResult();
+        session.close();
+        return anime;
     }
 
 
