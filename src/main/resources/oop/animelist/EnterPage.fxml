@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="785.0" style="-fx-background-color: 000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.animelist.EnterPageController">
    <children>
@@ -29,6 +28,13 @@
                               </AnchorPane>
                            </content>
                         </ScrollPane>
+                        <ButtonBar layoutX="132.0" layoutY="355.0" prefHeight="40.0" prefWidth="200.0">
+                          <buttons>
+                              <Button fx:id="ButtonDel" mnemonicParsing="false" style="-fx-background-color: 1fffda;" text="удалить" />
+                            <Button fx:id="ButtonAdd" mnemonicParsing="false" text="добавить" />
+                          </buttons>
+                        </ButtonBar>
+                        <TextField fx:id="Textfield" layoutY="362.0" promptText="название аниме" style="-fx-background-color: 1fffda; -fx-border-color: 0; -fx-font-style: 1fffda;" />
                      </children>
                   </AnchorPane>
                </content>
@@ -37,7 +43,6 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: 1fffda;">
                      <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" height="39.0" layoutY="351.0" stroke="WHITE" strokeType="INSIDE" width="382.0" />
                         <ScrollPane prefHeight="355.0" prefWidth="705.0">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="707.0">
@@ -47,13 +52,6 @@
                               </AnchorPane>
                            </content>
                         </ScrollPane>
-                        <TextField fx:id="Textfield" layoutY="358.0" promptText="название аниме" style="-fx-background-color: 1fffda; -fx-border-color: 0; -fx-font-style: 1fffda;" />
-                        <ButtonBar layoutX="172.0" layoutY="351.0" prefHeight="40.0" prefWidth="200.0">
-                          <buttons>
-                              <Button fx:id="ButtonDel" mnemonicParsing="false" style="-fx-background-color: 1fffda;" text="удалить" />
-                            <Button fx:id="ButtonAdd" mnemonicParsing="false" text="добавить" />
-                          </buttons>
-                        </ButtonBar>
                      </children>
                   </AnchorPane>
             </content>
