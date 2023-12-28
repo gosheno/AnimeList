@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Text?>
+
+<ButtonBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="435.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="oop.animelist.PopupPageController">
+  <buttons>
+      <TextField fx:id="DestTextFild" promptText="название" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="изменить на" />
+      <TextField fx:id="sourceTextFild" promptText="название" />
+      <Button fx:id="edit_button" mnemonicParsing="false" prefHeight="26.0" text="изменить" />
+  </buttons>
+</ButtonBar>

@@ -1,14 +1,19 @@
 package oop.animelist;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import logic.models.Anime;
 import logic.services.AnimeService;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -26,6 +31,10 @@ public class EnterPageController {
 
     @FXML
     private Tab TabUser;
+
+    @FXML
+    private Button edit_button;
+
 
 
     @FXML
@@ -62,12 +71,10 @@ public class EnterPageController {
             Anime anime = animeService.getAnime(name, MainPageController.currentUser);
             if (anime!= null){
                 animeService.deleteAnime(anime);
-                MainPageController.OpenNewScene(del_Button, "EnterPage.fxml");
             }
-
+            MainPageController.OpenNewScene(del_Button, "EnterPage.fxml");
 
         });
-
 
         add_Button.setOnAction(actionEvent -> {
             AnimeService animeService = new AnimeService();
@@ -77,6 +84,22 @@ public class EnterPageController {
             animeService.updateAnime(tr);
             MainPageController.OpenNewScene(add_Button, "EnterPage.fxml");
         });
+
+        edit_button.setOnAction(actionEvent -> {
+            FXMLLoader loader = new FXMLLoader(AnimeStoreApp.class.getResource("PopupPage.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        });
+
     }
 
 
