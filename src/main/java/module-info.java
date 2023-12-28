@@ -10,4 +10,5 @@ module oop.animelist {
     opens oop.animelist to javafx.fxml;
     opens logic.models to org.hibernate.orm.core;
     exports oop.animelist;
+
 }

@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import logic.models.User;
 import logic.services.AnimeService;
-
+import oop.animelist.MainPageController;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -45,6 +45,7 @@ public class EnterPageController {
     @FXML
     void initialize() {
         VboxPublicSet();
+        VboxUserSet(MainPageController.currentUser);
         back_button.setOnAction(actionEvent -> {
             MainPageController.OpenNewScene(back_button, "MainPage.fxml");
         });

@@ -9,12 +9,15 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import logic.services.UserService;
-
+import logic.models.User;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class MainPageController {
+
+    static User currentUser;
 
     @FXML
     private ResourceBundle resources;
@@ -51,6 +54,7 @@ public class MainPageController {
         UserService userService = new UserService();
         if(userService.getUser(login, password)!=null){
             OpenNewScene(enter_button, "EnterPage.fxml");
+            currentUser =userService.getUser(login, password);
         };
     }
 
