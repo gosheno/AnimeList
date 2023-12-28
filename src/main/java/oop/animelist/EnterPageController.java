@@ -2,8 +2,8 @@ package oop.animelist;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import logic.services.AnimeService;
@@ -26,6 +26,15 @@ public class EnterPageController {
     @FXML
     private Tab TabUser;
 
+
+    @FXML
+    private Button ButtonAdd;
+
+    @FXML
+    private Button ButtonDel;
+
+    @FXML
+    private TextField Textfield;
     @FXML
     private VBox VboxPublic;
 
@@ -35,11 +44,7 @@ public class EnterPageController {
     @FXML
     private Button back_button;
 
-    @FXML
-    private ScrollPane ScrollpanePublic;
 
-    @FXML
-    private ScrollPane ScrollpaneUser;
 
     @FXML
     void initialize() {
