@@ -1,7 +1,6 @@
 package logic.services;
 
 import logic.dao.UserDao;
-import logic.models.Anime;
 import logic.models.User;
 
 import java.util.List;
@@ -31,10 +30,6 @@ public class UserService {
 
     public List<User> findAllUsers() {
         return usersDao.findAll();
-    }
-
-    public Anime findAnimeById(int id) {
-        return usersDao.findAnimeById(id);
     }
 
     public User getUser(String name, String password) {

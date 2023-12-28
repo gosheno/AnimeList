@@ -1,10 +1,10 @@
 package logic.dao;
 
-import logic.models.Anime;
 import logic.models.User;
 import logic.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 public class UserDao {
@@ -44,11 +44,6 @@ public class UserDao {
     }
 
 
-    public Anime findAnimeById(int id) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        return session.get(Anime.class, id);
-    }
-
     public List<User> findAll() {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         List<User> users = (List<User>)  session.createQuery("From User").list();
@@ -57,15 +52,14 @@ public class UserDao {
     }
     public User get_user(String name, String password) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        List<User> users = (List<User>)  session.createQuery("From User").list();
-        session.close();
+        Query query = session.createQuery("from User where name = :paramName and password = :paramPassword");
 
-        for(User item:users){
-            if (item.getName().equals(name) && item.getPassword().equals(password)){
-                return item;
-            }
-        }
-        return null;
+        query.setParameter("paramName", name);
+        query.setParameter("paramPassword", password);
+
+        User user = (User)query.uniqueResult();
+        session.close();
+        return user;
     }
 
 }

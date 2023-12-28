@@ -2,6 +2,7 @@ package logic.services;
 
 import logic.dao.AnimeDao;
 import logic.models.Anime;
+import logic.models.User;
 
 import java.util.List;
 
@@ -34,9 +35,13 @@ public class AnimeService {
     public Anime findAnimeById(int id) {return animeDao.findById(id);}
 
     public Anime getAnime(String name) {
-        return animeDao.get_anime(name);
+        return animeDao.getAnime(name);
     };
     public void remove_all(){animeDao.remove_all();};
+
+    public List<String> getAnimeListAll(){return animeDao.getAnimeNamesAll();}
+
+    public List<String> getAnimeListUser(User user){return animeDao.getAnimeNamesUser(user);}
 
 
 }

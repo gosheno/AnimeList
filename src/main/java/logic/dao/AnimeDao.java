@@ -1,10 +1,13 @@
 package logic.dao;
 
 import logic.models.Anime;
+import logic.models.User;
 import logic.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AnimeDao {
@@ -51,12 +54,9 @@ public class AnimeDao {
         session.close();
         return items;
     }
-    public Anime get_anime(String name) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        List<Anime> items = (List<Anime>)  session.createQuery("From Anime").list();
-        session.close();
+    public Anime getAnime(String name) {
 
-        for(Anime item:items){
+        for(Anime item:findAll()){
             if (item.getName().equals(name) ){
                 return item;
             }
@@ -65,5 +65,29 @@ public class AnimeDao {
     }
 
 
+    public List<String> getAnimeNamesAll() {
+        List<String> animeNames = new ArrayList<>();
+        for (Anime anime : findAll()) {
+            animeNames.add(anime.getName());
+        }
+        return animeNames;
 
+    }
+
+    public List<String> getAnimeNamesUser(User user) {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Query query = session.createQuery("from Anime where user= :paramUser ");
+
+        query.setParameter("paramUser", user);
+
+        List<Anime> animeList = (List<Anime>)query.list();
+        session.close();
+
+        List<String> animeNames = new ArrayList<>();
+        for (Anime anime : animeList) {
+
+            animeNames.add(anime.getName());
+        }
+        return animeNames;
+    }
 }

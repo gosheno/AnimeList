@@ -38,15 +38,11 @@ public class MainPageController {
     void initialize() {
 
         enter_button.setOnAction(actionEvent -> {
-
             String login = login_field.getText().trim();
             String password = password_field.getText().trim();
             if(!login.equals("") && !password.equals("")){
                 login_user(login, password);
-
             }
-
-
         });
         reg_button.setOnAction(actionEvent -> {OpenNewScene(reg_button, "Reg_Page.fxml");});
     }
@@ -56,11 +52,8 @@ public class MainPageController {
         if(userService.getUser(login, password)!=null){
             OpenNewScene(enter_button, "EnterPage.fxml");
         };
-
-
     }
 
-    ;
 
     static public void OpenNewScene(Button button, String window){
         button.getScene().getWindow().hide();
@@ -73,8 +66,10 @@ public class MainPageController {
         }
         Parent root = loader.getRoot();
         Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
+
 
 }

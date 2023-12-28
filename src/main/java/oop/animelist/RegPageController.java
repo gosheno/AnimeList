@@ -48,6 +48,5 @@ public class RegPageController {
         OpenNewScene(reg_button, "MainPage.fxml");
     }
 
-    ;
 
 }
