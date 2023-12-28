@@ -6,6 +6,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import logic.models.Anime;
 import logic.services.AnimeService;
 
 import java.net.URL;
@@ -58,7 +59,8 @@ public class EnterPageController {
         del_Button.setOnAction(actionEvent -> {
             AnimeService animeService = new AnimeService();
             String name = Textfield.getText().trim();
-
+            Anime anime = animeService.getAnime(name, MainPageController.currentUser);
+            animeService.deleteAnime(anime);
         });
     }
 

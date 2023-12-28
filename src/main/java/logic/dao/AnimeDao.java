@@ -3,7 +3,6 @@ package logic.dao;
 import logic.models.Anime;
 import logic.models.User;
 import logic.utils.HibernateSessionFactoryUtil;
-import oop.animelist.MainPageController;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -59,7 +58,7 @@ public class AnimeDao {
 
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Query query = session.createQuery("from Anime where user.id = :paramId and name = :paramName" );
-        query.setParameter("paramId", MainPageController.currentUser);
+        query.setParameter("paramId", user);
         query.setParameter("paramName", name);
         return (Anime)query.uniqueResult();
     }
