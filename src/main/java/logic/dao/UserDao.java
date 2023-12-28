@@ -37,6 +37,17 @@ public class UserDao {
         tx1.commit();
         session.close();
     }
+    public void remove_all() {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+
+        for (User item: findAll()){
+            session.remove(item);
+        }
+        tx1.commit();
+        session.close();
+    }
+
 
     public Anime findAnimeById(int id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Anime.class, id);

@@ -40,6 +40,7 @@ public class UserService {
     public User getUser(String name, String password) {
         return usersDao.get_user(name, password);
     };
+    public void remove_all(){usersDao.remove_all();};
 
 
 }
