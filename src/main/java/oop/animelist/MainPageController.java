@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HelloController {
+public class MainPageController {
 
     @FXML
     private ResourceBundle resources;
@@ -64,7 +64,7 @@ public class HelloController {
     static public void OpenNewScene(Button button, String window){
         button.getScene().getWindow().hide();
 
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource(window));
+        FXMLLoader loader = new FXMLLoader(AnimeStoreApp.class.getResource(window));
         try {
             loader.load();
         } catch (IOException e) {

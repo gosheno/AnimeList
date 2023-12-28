@@ -8,10 +8,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class HelloApplication extends Application {
+public class AnimeStoreApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AnimeStoreApp.class.getResource("MainPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Your anime list!");
         stage.setScene(scene);

@@ -44,7 +44,7 @@ public class Anime {
         this.user = user;
     }
 
-    @Override    public String toString() {
+    @Override   public String toString() {
         return name + " ";
     }
 }

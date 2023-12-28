@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import logic.models.User;
 import logic.services.UserService;
 
-import static oop.animelist.HelloController.OpenNewScene;
+import static oop.animelist.MainPageController.OpenNewScene;
 
 public class RegPageController {
 
