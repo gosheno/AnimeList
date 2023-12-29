@@ -12,7 +12,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import logic.models.Anime;
 import logic.services.AnimeService;
-
+import java.util.Optional;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;

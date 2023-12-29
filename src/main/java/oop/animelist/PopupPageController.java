@@ -39,7 +39,9 @@ public class PopupPageController {
                 anime.setName(source);
                 animeService.updateAnime(anime);
             }
-            MainPageController.OpenNewScene(edit_button, "EnterPage.fxml");
+
+            MainPageController.OpenNewScene(edit_button, "EnterPage.fxml",1);
+
         });
     }
 
