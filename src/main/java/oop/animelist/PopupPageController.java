@@ -29,12 +29,12 @@ public class PopupPageController {
     @FXML
     void initialize() {
         edit_button.setOnAction(actionEvent -> {
+
             edit_button.getScene().getWindow().hide();
             AnimeService animeService = new AnimeService();
-            String dest = DestTextFild.getText().trim();
             String source = sourceTextFild.getText().trim();
 
-            Anime anime = animeService.getAnime(dest, MainPageController.currentUser);
+            Anime anime = animeService.getAnime(EnterPageController.destText, MainPageController.currentUser);
             if (anime!= null){
                 anime.setName(source);
                 animeService.updateAnime(anime);

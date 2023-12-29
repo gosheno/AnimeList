@@ -10,8 +10,10 @@
   <name>AnimeList</name>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<junit.version>5.10.0</junit.version>  </properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <junit.version>5.10.0</junit.version>
+      <logback.version>1.4.5</logback.version>
+  </properties>
 
   <dependencies>
 

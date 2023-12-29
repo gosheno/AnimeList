@@ -17,11 +17,7 @@ import java.util.List;
 
 
 public class EnterPageController {
-
-
-
-
-
+    public static String destText;
     @FXML
     public Tab TabPublic;
 
@@ -82,6 +78,7 @@ public class EnterPageController {
         });
 
         edit_button.setOnAction(actionEvent -> {
+            destText = Textfield.getText().trim();
             FXMLLoader loader = new FXMLLoader(AnimeStoreApp.class.getResource("PopupPage.fxml"));
             try {
                 loader.load();

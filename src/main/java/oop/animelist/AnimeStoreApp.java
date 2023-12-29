@@ -4,15 +4,11 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import logic.models.Anime;
-import logic.models.User;
 import logic.services.AnimeService;
 import logic.services.UserService;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AnimeStoreApp extends Application {
     @Override
@@ -25,6 +21,7 @@ public class AnimeStoreApp extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
+
         //test();
         launch();
     }

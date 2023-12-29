@@ -1,56 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="785.0" style="-fx-background-color: 000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.animelist.EnterPageController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.animelist.EnterPageController">
    <children>
-      <Button id="Button" fx:id="back_button" layoutX="548.0" layoutY="14.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="194.0" text="выйти" />
-      <TabPane layoutX="40.0" layoutY="60.0" prefHeight="489.0" prefWidth="706.0" style="-fx-background-color: 1fffda;" tabClosingPolicy="UNAVAILABLE">
+      <ImageView fitHeight="625.0" fitWidth="795.0" layoutX="-5.0" layoutY="7.0">
+         <image>
+            <Image url="@../../image/tyan.jpg" />
+         </image>
+      </ImageView>
+      <TabPane layoutX="11.0" layoutY="8.0" prefHeight="563.0" prefWidth="765.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="TabUser" style="-fx-background-color: ea8df7; -fx-effect: fa8df7;" text="your anime list">
                <content>
-                  <AnchorPane prefHeight="426.0" prefWidth="706.0" style="-fx-background-color: 1fffda;">
+                  <AnchorPane prefHeight="505.0" prefWidth="739.0" style="-fx-background-color: fffda;">
                      <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafafa" height="45.0" layoutX="152.0" layoutY="355.0" stroke="BLACK" strokeType="INSIDE" width="418.0" />
-                        <ScrollPane prefHeight="355.0" prefWidth="705.0">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="704.0" style="-fx-background-color: 1fffda;">
+                        <AnchorPane layoutX="236.0" layoutY="14.0" prefHeight="122.0" prefWidth="174.0" style="-fx-border-color: 0;">
+                           <children>
+                              <VBox prefHeight="121.0" prefWidth="174.0">
                                  <children>
-                                    <VBox fx:id="VboxUser" prefHeight="354.0" prefWidth="705.0" style="-fx-background-color: ea8df7; -fx-effect: fafafafa;" />
+                                    <TextField fx:id="Textfield" prefHeight="26.0" prefWidth="210.0" promptText="название аниме" style="-fx-border-color: 0;" />
+                                  <Button fx:id="add_Button" mnemonicParsing="false" prefHeight="30.0" prefWidth="319.0" text="добавить" />
+                                    <Button fx:id="del_Button" mnemonicParsing="false" prefHeight="30.0" prefWidth="246.0" style="-fx-background-color: 1fffda;" text="удалить" />
+                                    <Button fx:id="edit_button" mnemonicParsing="false" prefHeight="30.0" prefWidth="206.0" text="изменить" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <ScrollPane prefHeight="355.0" prefWidth="218.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="207.0" style="-fx-background-color: 1fffda;">
+                                 <children>
+                                    <VBox fx:id="VboxUser" prefHeight="354.0" prefWidth="206.0" style="-fx-background-color: ea8df7; -fx-effect: fafafafa;" />
                                  </children>
                               </AnchorPane>
                            </content>
                         </ScrollPane>
-                        <ButtonBar layoutX="158.0" layoutY="357.0" prefHeight="39.0" prefWidth="406.0">
-                          <buttons>
-                              <TextField fx:id="Textfield" prefHeight="26.0" promptText="название аниме" style="-fx-background-color: 1fffda; -fx-border-color: 0; -fx-font-style: 1fffda;" />
-                            <Button fx:id="add_Button" mnemonicParsing="false" prefHeight="30.0" text="добавить" />
-                              <Button fx:id="del_Button" mnemonicParsing="false" style="-fx-background-color: 1fffda;" text="удалить" />
-                          </buttons>
-                        </ButtonBar>
-                        <Button fx:id="edit_button" layoutX="273.0" layoutY="404.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" text="редактирование" />
                      </children>
                   </AnchorPane>
                </content>
           </Tab>
           <Tab fx:id="TabPublic" style="-fx-background-color: ea8df7;" text="public list">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: 1fffda;">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="519.0" prefWidth="825.0" style="-fx-background-color: 1fffda;">
                      <children>
-                        <ScrollPane prefHeight="355.0" prefWidth="705.0">
+                        <ScrollPane prefHeight="354.0" prefWidth="217.0">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="707.0">
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="228.0">
                                  <children>
-                                    <VBox fx:id="VboxPublic" prefHeight="354.0" prefWidth="705.0" style="-fx-background-color: ea8df7;" />
+                                    <VBox fx:id="VboxPublic" prefHeight="354.0" prefWidth="208.0" style="-fx-background-color: ea8df7;" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -61,5 +68,6 @@
           </Tab>
         </tabs>
       </TabPane>
+      <Button id="Button" fx:id="back_button" layoutX="247.0" layoutY="202.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="выйти" />
    </children>
 </Pane>
