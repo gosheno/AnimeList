@@ -104,16 +104,19 @@ public class EnterPageController {
         UserService userService = new UserService();
         List<User> userList =  userService.findAllUsers();
         List<Anime> animeList;
-        int i = 0;
-        Gridpane.addRow(0,new Text("anime:"), new Text("user:"));
+        int i = 1;
+        Gridpane.add(new Text("anime:"), 0, 0, 1, 2);
+        Gridpane.add(new Text("user:"), 1, 0, 1, 2);
 
         Gridpane.setGridLinesVisible(true);
         for (User user : userList) {
             animeList = animeService.getaAnimeListById(user.getId());
-            for(Anime anime: animeList){
-                i++;
-                Gridpane.addRow(i, new Text(user.getName()), new Text(anime.getName()));
-
+            if(!animeList.isEmpty()){
+                Gridpane.add(new Text(user.getName()), 0, i, 1, animeList.size());
+                for(Anime anime: animeList){
+                    i++;
+                    Gridpane.add(new Text(anime.getName()), 1, i);
+                }
             }
         }
     }
@@ -126,6 +129,7 @@ public class EnterPageController {
         {
             VboxUser.getChildren().add(new Text(str));
         }
+
 
     }
 }
