@@ -43,5 +43,6 @@ public class AnimeService {
 
     public List<String> getAnimeListUser(User user){return animeDao.getAnimeNamesUser(user);}
 
+    public List<Anime> getaAnimeListById(int id){return animeDao.getAnimeListId(id);}
 
 }

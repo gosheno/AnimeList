@@ -54,6 +54,7 @@ public class AnimeDao {
         session.close();
         return items;
     }
+
     public Anime getAnime(String name, User user) {
 
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
@@ -88,6 +89,15 @@ public class AnimeDao {
             animeNames.add(anime.getName());
         }
         return animeNames;
+    }
+    public List<Anime> getAnimeListId(int id) {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Query query = session.createQuery("from Anime where user.id = :paramId");
+
+        query.setParameter("paramId", id);
+        List<Anime> animeList = query.list();
+        session.close();
+        return animeList;
     }
 
 }

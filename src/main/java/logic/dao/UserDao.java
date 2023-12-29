@@ -46,7 +46,8 @@ public class UserDao {
 
     public List<User> findAll() {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        List<User> users = (List<User>)  session.createQuery("From User").list();
+        Query query = session.createQuery("From User");
+        List<User> users = query.list();
         session.close();
         return users;
     }
@@ -73,8 +74,8 @@ public class UserDao {
         }
         session.close();
         return 0;
-
     }
+
 
 
 }

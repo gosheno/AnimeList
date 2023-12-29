@@ -7,11 +7,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import logic.models.Anime;
+import logic.models.User;
 import logic.services.AnimeService;
+import logic.services.UserService;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -28,7 +32,6 @@ public class EnterPageController {
     public Button edit_button;
 
 
-
     @FXML
     private Button add_Button;
 
@@ -38,7 +41,7 @@ public class EnterPageController {
     @FXML
     private TextField Textfield;
     @FXML
-    private VBox VboxPublic;
+    private GridPane Gridpane;
 
     @FXML
     private VBox VboxUser;
@@ -98,13 +101,23 @@ public class EnterPageController {
 
     public void VboxPublicSet() {
         AnimeService animeService = new AnimeService();
-        List<String> data = animeService.getAnimeListAll();
-        for (String str : data) {
+        UserService userService = new UserService();
+        List<User> userList =  userService.findAllUsers();
+        List<Anime> animeList;
+        int i = 0;
+        Gridpane.addRow(0,new Text("anime:"), new Text("user:"));
 
-            VboxPublic.getChildren().add(new Text(str));
+        Gridpane.setGridLinesVisible(true);
+        for (User user : userList) {
+            animeList = animeService.getaAnimeListById(user.getId());
+            for(Anime anime: animeList){
+                i++;
+                Gridpane.addRow(i, new Text(user.getName()), new Text(anime.getName()));
 
+            }
         }
     }
+
 
     public void VboxUserSet(){
         AnimeService animeService = new AnimeService();
