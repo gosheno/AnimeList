@@ -105,8 +105,8 @@ public class EnterPageController {
         List<User> userList =  userService.findAllUsers();
         List<Anime> animeList;
         int i = 1;
-        Gridpane.add(new Text("anime:"), 0, 0, 1, 2);
-        Gridpane.add(new Text("user:"), 1, 0, 1, 2);
+        Gridpane.add(new Text("user:"), 0, 0, 1, 2);
+        Gridpane.add(new Text("anime:"), 1, 0, 1, 2);
 
         Gridpane.setGridLinesVisible(true);
         for (User user : userList) {
