@@ -40,7 +40,7 @@ public class PopupPageController {
                 animeService.updateAnime(anime);
             }
 
-            MainPageController.OpenNewScene(edit_button, "EnterPage.fxml",1);
+            MainPageController.OpenNewScene(edit_button, "EnterPage.fxml");
 
         });
     }

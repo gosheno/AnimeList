@@ -12,7 +12,6 @@ import logic.services.UserService;
 import logic.models.User;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -71,6 +70,9 @@ public class MainPageController {
     static public void OpenNewScene(Button button, String window) {
 
         button.getScene().getWindow().hide();
+        if (currentstage  != null){
+            currentstage.close();
+        }
 
         FXMLLoader loader = new FXMLLoader(AnimeStoreApp.class.getResource(window));
         try {
@@ -86,24 +88,7 @@ public class MainPageController {
         stage.show();
         currentstage = stage;
     }
-    static public void OpenNewScene(Button button, String window, int chk) {
 
-        button.getScene().getWindow().hide();
-        currentstage.close();
-        FXMLLoader loader = new FXMLLoader(AnimeStoreApp.class.getResource(window));
-        try {
-            loader.load();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
-        currentstage = stage;
-    }
 }
 
 

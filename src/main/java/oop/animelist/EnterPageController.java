@@ -12,28 +12,24 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import logic.models.Anime;
 import logic.services.AnimeService;
-import java.util.Optional;
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
+
 
 public class EnterPageController {
 
-    @FXML
-    private ResourceBundle resources;
+
+
+
 
     @FXML
-    private URL location;
+    public Tab TabPublic;
 
     @FXML
-    private Tab TabPublic;
+    public Tab TabUser;
 
     @FXML
-    private Tab TabUser;
-
-    @FXML
-    private Button edit_button;
+    public Button edit_button;
 
 
 
